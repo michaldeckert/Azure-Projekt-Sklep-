@@ -1,0 +1,1 @@
+siema projekcik na studia
