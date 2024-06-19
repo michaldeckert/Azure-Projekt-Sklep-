@@ -18,7 +18,7 @@ def get_db():
     finally:
         db.close()
 
-@app.get('/index/', response_class=HTMLResponse)
+@app.get('/index', response_class=HTMLResponse)
 async def wyposazenie(
     request: Request, 
     hx_request: Optional[str] = Header(None),
@@ -28,7 +28,7 @@ async def wyposazenie(
     context = {'request': request, 'wyposazenie': wyposazenie}
     return templates.TemplateResponse("index.html", context)
 
-@app.post('/delete/', response_class=HTMLResponse)
+@app.post('/delete', response_class=HTMLResponse)
 async def usun_wyposazenie(
     request: Request,
     id: int = Form(...),
@@ -46,7 +46,7 @@ async def usun_wyposazenie(
         return templates.TemplateResponse("table.html", context)
     
 
-@app.post('/add/', response_class=HTMLResponse)
+@app.post('/add', response_class=HTMLResponse)
 async def dodaj_wyposazenie(
     request: Request,
     nazwa: str = Form(...),
