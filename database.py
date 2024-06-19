@@ -1,10 +1,10 @@
 import urllib
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
-from variables import usernameV, passwordV
+from variables import usernameV, passwordV, serverV, databaseV
 
-server = "sqlserversklepprojekt.database.windows.net"
-database = "sklepMuzyczny"
+server = serverV
+database = databaseV
 username = usernameV
 password = passwordV
 
