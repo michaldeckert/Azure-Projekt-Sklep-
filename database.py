@@ -10,7 +10,6 @@ password = passwordV
 
 driver = '{ODBC Driver 18 for SQL Server}'
 
-# odbc_str = 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:sqlserversklepprojekt.database.windows.net,1433;Database=sklepMuzyczny;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30'
 odbc_str = 'DRIVER='+driver+';SERVER='+server+';PORT=1433;UID='+username+';DATABASE='+ database + ';PWD='+ password
 connect_str = 'mssql+pyodbc:///?odbc_connect=' + urllib.parse.quote_plus(odbc_str)
 
