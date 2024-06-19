@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Sklep muzyczny</title>
+        <script src="https://unpkg.com/htmx.org@2.0.0" integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw" crossorigin="anonymous"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="mx-4">
+            <table class="min-w-[50%] mb-4">
+                <thead class="border-b text-lg">
+                    <tr>
+                        <th class="border bg-indigo-300">ID egzemplarza</th>
+                        <th class="border bg-indigo-300">Nazwa</th>
+                        <th class="border bg-indigo-300">Wykonawca</th>
+                        <th class="border bg-indigo-300">Gatunek</th>
+                        <th class="border bg-indigo-300">Nośnik</th>
+                        <th class="border bg-indigo-300">Wydawnictwo</th>
+                        <th class="border bg-indigo-300">Data wydania</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center text-sm" id="table-body">
+                    {% include 'table.html' %}
+                </tbody>
+            </table>
+
+            <!-- Formularz dodawania nowego wyposażenia -->
+             <table>
+                <form id="add-form" hx-post="/add" hx-target="#table-body" hx-swap="innerHTML">
+                    <tr>
+                        <td><label for="nazwa">Nazwa:</label></td>
+                        <td><input class="border" type="text" id="nazwa" name="nazwa" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wykonawca ">Wykonawca:</label></td>
+                        <td><input class="border ml-50" type="text" id="wykonawca" name="wykonawca" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gatunek">Gatunek:</label></td>
+                        <td><input class="border" type="text" id="gatunek" name="gatunek" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nosnik">Nośnik:</label></td>
+                        <td><input class="border" type="text" id="nosnik" name="nosnik" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="wydawnictwo">Wydawnictwo:</label></td>
+                        <td><input class="border" type="text" id="wydawnictwo" name="wydawnictwo" required></td>
+                    </tr>
+                    <tr>
+                        <td><label class="min-w-[50%]" for="wydano">Data wydania:</label></td>
+                        <td><input class="border" type="text" id="wydano" name="wydano" required></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="submit" class="px-3 py-1 bg-blue-600 text-white ml-4">Dodaj nową pozycję</button></td>
+                    </tr>
+                    
+                </form>
+             </table>
+            
+        </div>
+    </body>
+</html>
