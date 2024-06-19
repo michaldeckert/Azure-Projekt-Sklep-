@@ -3,8 +3,8 @@ import os
 usernameV = os.getenv('DATABASE_USERNAME')
 passwordV = os.getenv('DATABASE_PASSWORD')
 
-if not database_url or not secret_key:
+if not usernameV or not passwordV:
     raise ValueError("Zmienne środowiskowe DATABASE_URL lub SECRET_KEY nie zostały ustawione!")
 
-print(f"Database URL: {database_url}")
-print(f"Secret Key: {secret_key}")
+print(f"USERNAME: {usernameV}")
+print(f"PASSWORD: {passwordV}")
